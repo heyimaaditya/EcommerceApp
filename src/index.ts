@@ -1,8 +1,10 @@
-import express from "express";
-const app=express();
-app.get('/', (req, res) => {
+import express,{Express,Request,Response} from "express";
+import { PORT } from "./secrets";
+const app:Express=express();
+app.get('/', (req:Request, res:Response) => {
     res.send('Hello World!');
 });
-app.listen(3000, () => {
+
+app.listen(PORT, () => {
     console.log('Server is running on http://localhost:3000');
 });

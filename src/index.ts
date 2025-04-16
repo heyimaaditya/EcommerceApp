@@ -10,7 +10,7 @@ app.use('/api',rootRouter);
 export const prismaClient=new PrismaClient({
     log:['query']
 })
-app.use(errorMiddleware);
+app.use(errorMiddleware as express.ErrorRequestHandler);
 app.listen(PORT, () => {
     console.log('Server is running on http://localhost:3000');
 });
